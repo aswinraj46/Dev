@@ -1,0 +1,4 @@
+docker-demo:
+  image: somupadhyay/docker-demo
+  ports:
+   - "8080:8585"

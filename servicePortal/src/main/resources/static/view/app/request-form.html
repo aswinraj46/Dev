@@ -1,0 +1,27 @@
+<div layout="column" ng-cloak>
+<md-content layout-padding>
+    <form name="requestForm">
+
+      <md-input-container class="md-block">
+        <label>Git Repository</label>
+        <input required md-no-asterisk name="gitRepo" ng-model="build.gitRepo">
+        <div ng-messages="build.gitRepo.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Project</label>
+        <input required md-no-asterisk name="projectName" ng-model="build.projectName">
+        <div ng-messages="build.projectName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      
+        <div class="button-toolbar" layout="row" layout-align="end center">
+            <md-button class="md-primary" ng-click="submit(build)" ng-disabled="requestForm.$invalid" type="submit">Submit</md-button>
+        </div>
+        
+    </form>
+  </md-content>
+</div>
