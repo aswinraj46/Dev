@@ -1,0 +1,19 @@
+#this is for Docker image file
+# by Aswin
+#this is base rhel image it will download from docker repository
+FROM centos
+
+#below lines refers what programs need to install
+#RUN yum update all -y
+
+#install maven
+RUN yum install maven -y
+
+#install wget to achieve CF cli
+RUN yum install wget -y
+
+#install CF cli in image
+RUN  curl -L --insecure "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
+
+#move the curl to bin folder
+RUN mv cf /usr/local/bin
